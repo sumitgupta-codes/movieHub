@@ -11,7 +11,7 @@ async function searchMovie(imdbID) {
   loading.classList.remove("hidden");
 
   let response = await fetch(
-    `http://www.omdbapi.com/?apikey=39d48c0a&i=${imdbID}&plot=full`,
+    `https://www.omdbapi.com/?apikey=39d48c0a&i=${imdbID}&plot=full`,
   );
 
   let data = await response.json();
