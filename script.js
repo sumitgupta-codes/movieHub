@@ -19,7 +19,7 @@ async function searchMovies(movieName) {
   //   movieHub.innerHTML = `<p>Searching Movie...</p>`;
   loading.classList.remove("hidden");
   let response = await fetch(
-    `https://www.omdbapi.com/?apikey=39d48c0a&s=${movieName}`,
+    `https://www.omdbapi.com/?apikey=39d48c0a&s=${encodeURIComponent(movieName)}`, // jab ham "&" use krke movie search krte hai to wo search nahi hoti kyu url me & convert nahi hota, usko convert karne ke liye encodeURIComponent use kr rahe hai.
   );
 
   let data = await response.json();
