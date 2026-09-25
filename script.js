@@ -19,7 +19,7 @@ async function searchMovies(movieName) {
   //   movieHub.innerHTML = `<p>Searching Movie...</p>`;
   loading.classList.remove("hidden");
   let response = await fetch(
-    `http://www.omdbapi.com/?apikey=39d48c0a&s=${movieName}`,
+    `https://www.omdbapi.com/?apikey=39d48c0a&s=${movieName}`,
   );
 
   let data = await response.json();
