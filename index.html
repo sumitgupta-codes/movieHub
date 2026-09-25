@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>MovieHub</title>
+
+   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body class="min-h-screen bg-[#08090d] text-white font-[Inter]">
+
+    <nav class="border-b border-white/10 bg-[#08090d]/90 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-5 sm:px-8 py-5 flex items-center justify-between">
+
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2">
+                <div class="w-9 h-9 rounded-xl bg-red-500 flex items-center justify-center">
+                    <span class="text-lg">▶</span>
+                </div>
+
+                <span class="text-xl sm:text-2xl font-extrabold tracking-tight">
+                    Movie<span class="text-red-500">Hub</span>
+                </span>
+            </a>
+
+            <!-- Small right text -->
+            <div class="hidden sm:block text-sm text-gray-500">
+                Discover your next movie
+            </div>
+
+        </div>
+    </nav>
+
+
+    <main>
+
+        <section class="max-w-5xl mx-auto px-5 pt-16 sm:pt-24 pb-14 text-center">
+
+            <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full
+                  bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+                <span class="w-2 h-2 rounded-full bg-red-500"></span>
+                Search your favorite movies
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-tight">
+                Find Movies You
+                <span class="text-red-500">Love.</span>
+            </h1>
+
+            <p class="mt-5 text-gray-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+                Search thousands of movies and discover your next favorite watch.
+            </p>
+
+
+            <!-- Search Box -->
+            <div class="max-w-2xl mx-auto mt-9">
+
+                <form id="searchMovie" class="flex items-center gap-2 p-2 rounded-2xl
+                 bg-[#111318] border border-white/10
+                 focus-within:border-red-500/50
+                 transition">
+
+                    <div class="pl-3 text-gray-500">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="7"></circle>
+                            <path d="m20 20-3.5-3.5"></path>
+                        </svg>
+                    </div>
+
+                    <input id="movie-input" type="text" placeholder="Search for a movie..." autocomplete="off" class="flex-1 min-w-0 bg-transparent outline-none
+                   px-2 py-3 text-sm sm:text-base
+                   placeholder:text-gray-600" />
+
+                    <button id="search-btn" type="submit" class="px-5 sm:px-7 py-3 rounded-xl
+                   bg-red-500 hover:bg-red-600
+                   active:scale-95
+                   transition-all duration-200
+                   font-semibold text-sm sm:text-base">
+                        Search
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <section class="max-w-7xl mx-auto px-5 sm:px-8 pb-20">
+
+            <!-- Results Header -->
+            <div class="flex items-center justify-between mb-7">
+
+                <div>
+                    <p class="text-xs uppercase tracking-widest text-gray-500 mb-1">
+                        Results
+                    </p>
+
+                    <h2 id="results-title" class="text-2xl sm:text-3xl font-bold">
+                        Search Movies
+                    </h2>
+                </div>
+
+                <span id="results-count" class="hidden sm:block text-sm text-gray-500">
+                    0 movies
+                </span>
+
+            </div> 
+
+            <div id="movie-hub"
+                class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 sm:gap-6">
+
+            </div>
+
+            <div id="loading" class="hidden py-20 text-center">
+
+                <div class="w-10 h-10 mx-auto rounded-full
+                 border-4 border-white/10
+                 border-t-red-500
+                 animate-spin"></div>
+
+                <p class="mt-5 text-sm text-gray-500">
+                    Searching movies...
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="border-t border-white/10 mt-10">
+
+    <div
+        class="max-w-7xl mx-auto px-5 sm:px-8 py-8
+               flex flex-col sm:flex-row
+               items-center justify-between gap-5"
+    >
+
+        <!-- Left -->
+        <div class="text-center sm:text-left">
+
+            <p class="text-sm text-gray-500">
+                © 2026 MovieHub
+            </p>
+
+            <p class="mt-1 text-xs text-gray-700">
+                Discover. Search. Watch.
+            </p>
+
+        </div>
+
+
+        <!-- Right -->
+        <div class="flex items-center gap-4">
+
+            <span class="text-sm text-gray-500">
+                Built by
+                <span class="text-gray-300 font-medium">
+                    Sumit Gupta
+                </span>
+            </span>
+
+
+            <a
+                href="https://github.com/sumitgupta-codes"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Sumit Gupta GitHub"
+                class="w-10 h-10 rounded-xl
+                       flex items-center justify-center
+                       bg-white/5
+                       border border-white/10
+                       text-gray-400
+                       hover:text-white
+                       hover:bg-white/10
+                       hover:border-white/20
+                       transition-all duration-200"
+            >
+
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                >
+                    <path
+                        d="M12 .5C5.65.5.5 5.65.5 12c0 5.08
+                        3.29 9.39 7.86 10.91.58.11.79-.25.79-.56
+                        0-.28-.01-1.02-.02-2-3.2.69-3.88-1.54-3.88-1.54
+                        -.53-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.71.08-.71
+                        1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26
+                        3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28
+                        -5.23-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.47
+                        .11-3.06 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1
+                        2.9-.39c.98 0 1.97.13 2.9.39 2.2-1.49 3.17-1.18
+                        3.17-1.18.63 1.59.23 2.77.11 3.06.74.81 1.19
+                        1.84 1.19 3.1 0 4.42-2.69 5.4-5.25 5.68.41.35.78
+                        1.04.78 2.1 0 1.52-.01 2.74-.01 3.11 0 .3.21.67.8.55
+                        A10.99 10.99 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"
+                    />
+                </svg>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+<script src="script.js"></script>
+</body>
+
+</html>
